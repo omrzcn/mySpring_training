@@ -4,6 +4,7 @@ import com.cydeo.bean_annotation.casefactory.Case;
 
 import com.cydeo.bean_annotation.config.ComputerConfig;
 import com.cydeo.bean_annotation.config.RandomConfig;
+import com.cydeo.bean_annotation.monitorfactory.AcerMonitor;
 import com.cydeo.bean_annotation.monitorfactory.Monitor;
 
 import com.cydeo.bean_annotation.motherboardfactory.Motherboard;
@@ -31,9 +32,23 @@ public class ComputerTest {
         Case case1 = container.getBean(Case.class);
         Motherboard motherboard = container.getBean(Motherboard.class);
 
-
         PC myPc = new PC(case1, monitor, motherboard);
         myPc.powerUp();
+
+
+        System.out.println("==================Retrieving Multiple Objects From Container");
+        // there are 2 sony monitor in config class. Im gonna bring one which i gave a name
+
+
+        // These are types how to call beans.
+
+        Monitor theMonitor = container.getBean("monitorSony",Monitor.class); // Default Bean Name
+        Monitor theMonitor1 = container.getBean("sony",Monitor.class); // Custom Bean Name
+        Monitor theMonitor2 = container.getBean(Monitor.class);  // @Primary
+
+
+
+
 
 
     }
