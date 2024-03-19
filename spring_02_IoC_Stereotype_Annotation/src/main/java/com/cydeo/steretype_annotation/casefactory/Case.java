@@ -1,5 +1,10 @@
 package com.cydeo.steretype_annotation.casefactory;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public abstract class Case {
 
     private String model;
