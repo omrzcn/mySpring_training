@@ -1,12 +1,12 @@
 package com.cydeo.steretype_annotation.monitorfactory;
 
 public abstract class Monitor {
-    private String make;
+    private String model;
     private String manufacturer;
     private int size;
 
-    public Monitor(String make, String manufacturer, int size) {
-        this.make = make;
+    public Monitor(String model, String manufacturer, int size) {
+        this.model = model;
         this.manufacturer = manufacturer;
         this.size = size;
     }
