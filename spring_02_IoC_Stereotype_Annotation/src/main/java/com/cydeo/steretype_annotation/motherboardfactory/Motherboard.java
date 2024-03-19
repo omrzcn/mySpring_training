@@ -1,5 +1,10 @@
 package com.cydeo.steretype_annotation.motherboardfactory;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public abstract class Motherboard {
     private String model;
     private String manufacturer;
