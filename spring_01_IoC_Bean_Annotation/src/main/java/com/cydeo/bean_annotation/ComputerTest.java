@@ -42,9 +42,10 @@ public class ComputerTest {
 
         // These are types how to call beans.
 
-        Monitor theMonitor = container.getBean("monitorSony",Monitor.class); // Default Bean Name
+//        Monitor theMonitor = container.getBean("monitorSony",Monitor.class); // Default Bean Name
         Monitor theMonitor1 = container.getBean("sony",Monitor.class); // Custom Bean Name
-        Monitor theMonitor2 = container.getBean(Monitor.class);  // @Primary
+//        Monitor theMonitor2 = container.getBean(Monitor.class);  // @Primary
+        System.out.println(theMonitor1);
 
 
 
