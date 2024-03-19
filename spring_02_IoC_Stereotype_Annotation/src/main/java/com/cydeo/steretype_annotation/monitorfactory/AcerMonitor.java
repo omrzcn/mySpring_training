@@ -1,5 +1,8 @@
 package com.cydeo.steretype_annotation.monitorfactory;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class AcerMonitor extends Monitor{
     public AcerMonitor() {
         super("22 inch beast","Sony",23);
