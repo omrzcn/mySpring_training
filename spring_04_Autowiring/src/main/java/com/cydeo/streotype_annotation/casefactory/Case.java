@@ -10,8 +10,8 @@ public abstract class Case {
     private String manufacturer;
     private String powerSupply;
 
-    @Autowired
-    private Dimensions dimensions;
+   @Autowired // this is field auto wiring
+   private Dimensions dimensions;
 
     public Case(String model, String manufacturer, String powerSupply) {
         this.model = model;
