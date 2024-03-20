@@ -2,6 +2,7 @@ package com.cydeo.streotype_annotation.casefactory;
 
 import lombok.Getter;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 @Getter
 public abstract class Case {
