@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Configuration;
 public class PcConfig {
 
     @Bean
+
     public Dimensions dimensions(){ // we created this dimension apart from case dell and use it below @Bean
         return new Dimensions(50,10,10);
     }

@@ -1,10 +1,12 @@
 package com.cydeo.streotype_annotation.casefactory;
 
 import lombok.Getter;
+import lombok.ToString;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Getter
+@ToString
 public abstract class Case {
 
     private String model;

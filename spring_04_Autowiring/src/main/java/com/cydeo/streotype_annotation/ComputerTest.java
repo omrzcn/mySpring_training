@@ -14,7 +14,8 @@ public class ComputerTest {
         ApplicationContext container = new AnnotationConfigApplicationContext(PcConfig.class);
 
        PC myPc = container.getBean(PC.class);
-        System.out.println(myPc.getMonitor().getManufacturer());
+//        System.out.println(myPc.getMonitor().getManufacturer());
+        myPc.powerUp();
 
 
     }
