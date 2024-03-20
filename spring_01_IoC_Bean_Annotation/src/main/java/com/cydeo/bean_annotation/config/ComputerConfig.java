@@ -29,7 +29,9 @@ public class ComputerConfig {
 
     @Bean
     @Primary
-    public Monitor monitorAcer(){return new AcerMonitor("23 inch Beast","Acer",23);}
+    public Monitor monitorAcer(){
+        return new AcerMonitor("23 inch Beast","Acer",23);
+    }
 
     @Bean
    public Motherboard motherboardAsus(){
