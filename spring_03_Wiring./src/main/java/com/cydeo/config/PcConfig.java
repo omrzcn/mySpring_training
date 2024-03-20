@@ -15,7 +15,7 @@ public class PcConfig {
     }
 
     @Bean
-    public Case caseDell(Dimensions dimensions){ // THIS IS WIRING.
+    public Case caseDell(Dimensions dimensions){ // THIS IS WIRING. We Used here Wiring Beans using method parameter
         return new DellCase("220B","Dell","240",dimensions);
     }
 
