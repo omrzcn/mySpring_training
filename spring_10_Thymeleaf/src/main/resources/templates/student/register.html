@@ -22,15 +22,84 @@
 </h2>
 
 
-
 <!--This is relative way-->
 <a th:href="@{/student/welcome}"> Welcome</a>  <!--When user click welcome link, its gonna go to that link. what class he/or she saw welcome link doesnt matter-->
 
+
 <!--Adding Parameter To Link-->
 <h2>
-    <a th:href="@{/student/welcome(id=3)}"> Link </a>
+    <a th:href="@{/student/welcome(id=3)}"> Link1 </a>
 
 </h2>
+
+<h2>
+    <a th:href="@{/student/welcome(name = ${students.get(0).firstName})}"> Link2 </a>
+
+</h2>
+
+
+<!--Iteration-->
+
+
+<h2>Printing Student First Name: </h2>
+<ul>
+
+   <li th:each=" student : ${students}" th:text="${student.firstName}"> </li>
+
+</ul>
+<h2>Printing Student Last Name</h2>
+<ul>
+    <li th:each=" student : ${students}" th:text="${student.lastName}"> </li>
+</ul>
+
+<h2>Printing Student's in table </h2>
+<table>
+    <thead>
+    <tr>
+        <td>First Name</td>
+        <td>Last Name</td>
+        <td>Age</td>
+        <td>State</td>
+    </tr>
+    </thead>
+
+    <tbody>
+
+    <tr  th:each="student : ${students}" >
+        <td  th:text="${student.firstName}"></td>
+        <td  th:text="${student.lastName}"></td>
+        <td  th:text="${student.age}"></td>
+        <td  th:text="${student.state}"></td>
+    </tr>
+<!--    <tr>-->
+<!--        <td th:text="${mentor1.getFirstName()}"></td>-->
+<!--        <td th:text="${mentor1.getLastName()}"></td>-->
+<!--        <td th:text="${mentor1.getAge()}"></td>-->
+<!--        <td th:text="${mentor1.getGender()}"></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td th:text="${mentor2.getFirstName()}"></td>-->
+<!--        <td th:text="${mentor2.getLastName()}"></td>-->
+<!--        <td th:text="${mentor2.getAge()}"></td>-->
+<!--        <td th:text="${mentor2.getGender()}"></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td th:text="${mentor3.getFirstName()}"></td>-->
+<!--        <td th:text="${mentor3.getLastName()}"></td>-->
+<!--        <td th:text="${mentor3.getAge()}"></td>-->
+<!--        <td th:text="${mentor3.getGender()}"></td>-->
+<!--    </tr>-->
+    </tbody>
+
+
+
+
+</table>
+
+
+
+
+
 
 
 </body>
