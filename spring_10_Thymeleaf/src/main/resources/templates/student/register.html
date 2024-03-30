@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cydeo</title>
+</head>
+<body>
+
+<!--Display Value of Model-->
+<h1 th:text="${students.get(1).firstName}"></h1>
+<h2 th:text="${students.get(1).lastName}"></h2>
+
+<!--Concatenation-->
+<h2 th:text="${'Hello '+ students.get(0).getFirstName()}"> </h2>
+<h2 th:text="${students.get(0).getFirstName()+' '+students.get(0).lastName}"></h2>
+
+
+<!--Link-->
+
+<!--This is absolute way-->
+<h2> <a th:href="@{http://cydeo.com}"> Cydeo Page</a>
+</h2>
+
+
+
+<!--This is relative way-->
+<a th:href="@{/student/welcome}"> Welcome</a>  <!--When user click welcome link, its gonna go to that link. what class he/or she saw welcome link doesnt matter-->
+
+<!--Adding Parameter To Link-->
+<h2>
+    <a th:href="@{/student/welcome(id=3)}"> Link </a>
+
+</h2>
+
+
+</body>
+</html>
