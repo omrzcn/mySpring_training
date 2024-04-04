@@ -32,23 +32,20 @@ public class MentorController {
 
     }
 
+    // asagidaki methodda ben formu doldurugumda tekrar ayni sayfanin acilmasini istiyorum. Bu yuzden ideal way'i bu sekil yapacagiz :
+
     @PostMapping("/confirm") // we will use post mapping because we are posting :)
     public String submitForm(@ModelAttribute("mentor") Mentor mentor) {
 
 
 
+//        return "mentor/mentor-confirmation";  // if i wanna have empty page , i commend out this one and i will add below one.
 
+//        return "mentor/mentor-register";  // this gonna bring register page again but in browser we see mentor/confirm  we dont want this we need to see mentor/register again
 
+        // ideal way :
+        return "redirect:/mentor/register";  // it means dont go to view and refresh the page.
 
-        return "mentor/mentor-confirmation";
-    }
-    @GetMapping("/confirm") // we will use post mapping because we are posting :)
-    public String submitForm2(Model model){
-
-
-
-
-        return "mentor/mentor-confirmation";
     }
 
 
