@@ -39,7 +39,7 @@ public class MentorController {
 
 
 
-//        return "mentor/mentor-confirmation";  // if i wanna have empty page , i commend out this one and i will add below one.
+       // return "mentor/mentor-confirmation";  // if i wanna have empty page , i commend out this one and i will add below one.
 
 //        return "mentor/mentor-register";  // this gonna bring register page again but in browser we see mentor/confirm  we dont want this we need to see mentor/register again
 
