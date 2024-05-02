@@ -15,6 +15,7 @@ import java.time.LocalDateTime;
 @Table(name = "payments")
 public class Payment {
 
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -27,6 +28,13 @@ public class Payment {
 
     @Enumerated(EnumType.STRING)
     private Status status;
+
+
+    public Payment(LocalDate createdDate, BigDecimal amount, Status status) { // we craeted constructor without id
+        this.createdDate = createdDate;
+        this.amount = amount;
+        this.status = status;
+    }
 
 
 
