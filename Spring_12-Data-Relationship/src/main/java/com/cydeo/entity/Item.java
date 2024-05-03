@@ -16,8 +16,9 @@ public class Item {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String name;
     private String code;
+    private String name;
+
 
 
     @ManyToMany(mappedBy = "itemList")
@@ -25,7 +26,7 @@ public class Item {
 
 
 
-    public Item(String code, String name) {
+    public Item( String name,String code) {
         this.code = code;
         this.name = name;
     }

@@ -58,12 +58,9 @@ public class DataGenerator implements CommandLineRunner {
         itemRepository.save(item1);
         itemRepository.save(item2);
         itemRepository.save(item3);
+
         cartRepository.save(cart1);
         cartRepository.save(cart2);
-
-
-
-
 
         merchantRepository.save(merchant1); // bunu paymentRepossitorylerden once yazmam gerekir. Cunku once amazon olmali sonra payment islemleri olur.
         paymentRepository.save(payment1);
