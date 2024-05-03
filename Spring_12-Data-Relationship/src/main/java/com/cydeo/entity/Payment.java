@@ -36,6 +36,16 @@ public class Payment {
     // OneToOne' i sadece parent'a koymak mantikli, child'a degil(payment Detail class) ama ornek olsun diye koyduk
 
 
+    @ManyToOne   // we put here because many payment will have one merchant
+    private Merchant merchant;
+
+
+
+
+
+
+
+
     public Payment(LocalDate createdDate, BigDecimal amount, Status status) { // we craeted constructor without id
         this.createdDate = createdDate;
         this.amount = amount;
