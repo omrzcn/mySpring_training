@@ -2,5 +2,5 @@ package com.cydeo.enums;
 
 public enum Status {
 
-    SUCCESS, FAILED
+    SUCCESS, FAILURE
 }

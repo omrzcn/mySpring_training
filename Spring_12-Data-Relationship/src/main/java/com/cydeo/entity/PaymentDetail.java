@@ -9,10 +9,10 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "payment_details")
+@Table(name = "paymentDetails")
 @NoArgsConstructor
 @Data
-public class PaymentDetails {
+public class PaymentDetail {
 
 
     @Id
@@ -23,12 +23,18 @@ public class PaymentDetails {
     private BigDecimal commissionAmount;
 
 
+
     @Column(columnDefinition = "DATE")
     private LocalDate payoutDate;
 
-    public PaymentDetails(BigDecimal commissionAmount, BigDecimal merchantPayoutAmount, LocalDate payoutDate) {
+    @OneToOne(mappedBy = "paymentDetail") // help of mapped by, it will not foreign key for payment_id when we get paymentDetail table.
+    private Payment payment;
+
+
+    public PaymentDetail(BigDecimal merchantPayoutAmount , BigDecimal commissionAmount, LocalDate payoutDate) {
         this.commissionAmount = commissionAmount;
         this.merchantPayoutAmount = merchantPayoutAmount;
         this.payoutDate = payoutDate;
     }
+
 }
