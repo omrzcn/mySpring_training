@@ -31,7 +31,7 @@ public class Payment {
 
 //    @OneToOne (cascade = CascadeType.ALL) // whenever we save a payment in DataGenerator, payment detail is gonna save automatically with help of cashcade
     @OneToOne(cascade = {CascadeType.PERSIST,CascadeType.MERGE} ) // we dont want to put CascadeType.ALL, because of delete fucntion. companies doesnt want to use delete function
-//    @JoinColumn(name = "payment_detail_id") // we dont have to write this. it coming automaticalliy
+    //    @JoinColumn(name = "payment_detail_id") // we dont have to write this. it coming automaticalliy
     private PaymentDetail paymentDetail;
     // OneToOne' i sadece parent'a koymak mantikli, child'a degil(payment Detail class) ama ornek olsun diye koyduk
 
