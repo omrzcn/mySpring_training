@@ -1,4 +1,4 @@
-INSERT INTO employee(id,name)
+INSERT INTO employees(id,name)
 VALUES(1,'Mike');
 
 insert into students(first_name,last_name,email) VALUES('Mike','Smith','mike@cydeo.com');
