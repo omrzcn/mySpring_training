@@ -53,9 +53,35 @@ public interface EmployeeRepository extends JpaRepository<Employee,Integer> {
     @Query("select e.salary from Employee  e where e.email='amcnee1@google.es'")
     Integer retrieveEmployeeSalary(); // Integer is what we gonna return.
 
-    //Not Equal
-//    @Query("select e from Employee e where e.salary !=")
-//    List<Employee> etrieveEmployeeSalaryNotEqual(Integer salary);
+   // Not Equal
+    @Query("select e from Employee e where e.salary= ?1")
+    List<Employee> retrieveEmployeeSalaryNotEqual(Integer salary);
+
+
+    //Like / Contains / Starts-with / Ends-with
+    @Query("select  e from Employee e where e.firstName like ?1")
+    List<Employee> retrieveEmployeeFirstNameLike(String pattern);
+
+
+    //Less Than
+    @Query("select e from Employee e where e.salary < ?1")
+    List<Employee> retrieveEmployeeSalaryLessThan(Integer salary);
+
+    //Greater Than
+    @Query("select e.firstName from Employee e where e.salary > ?1")
+    List<String> retrieveElementSalaryGreaterThan(int salary);
+
+    //BETWEEN
+    @Query("select e from Employee e where e.salary between ?1 and ?2")
+    List<Employee> retrieveEmployeeSalaryBetween(int salary1,int salary2);
+
+    //BEFORE
+    @Query("select e from Employee e where e.hireDate < ?1")
+    List<Employee> retrieveEmployeeHiredDateBefore(LocalDate hiredDate);
+
+    //NULL
+
+
 
 
 
