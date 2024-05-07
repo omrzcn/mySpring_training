@@ -54,8 +54,8 @@ public interface EmployeeRepository extends JpaRepository<Employee,Integer> {
     Integer retrieveEmployeeSalary(); // Integer is what we gonna return.
 
     //Not Equal
-    @Query("select e from Employee e where e.salary !=")
-    List<Employee> etrieveEmployeeSalaryNotEqual(Integer salary);
+//    @Query("select e from Employee e where e.salary !=")
+//    List<Employee> etrieveEmployeeSalaryNotEqual(Integer salary);
 
 
 
