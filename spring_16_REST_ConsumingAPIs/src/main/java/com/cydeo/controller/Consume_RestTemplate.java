@@ -12,12 +12,12 @@ import java.util.Arrays;
 
 @RestController
 @RequestMapping("/cydeo")
-public class Customer_RestTemplate {
+public class Consume_RestTemplate {
 
     private final String URI="https://jsonplaceholder.typicode.com/users";
     private final RestTemplate restTemplate;
 
-    public Customer_RestTemplate(RestTemplate restTemplate) {
+    public Consume_RestTemplate(RestTemplate restTemplate) {
         this.restTemplate = restTemplate;
     }
 
