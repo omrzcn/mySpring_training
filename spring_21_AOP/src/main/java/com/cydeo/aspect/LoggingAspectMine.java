@@ -15,31 +15,55 @@ public class LoggingAspectMine {
 
     Logger logger = LoggerFactory.getLogger(LoggingAspectMine.class);
 
-    @Pointcut("execution(* com.cydeo.controller.CourseController.*(..))")
-    public void myPointCut(){}
+//    @Pointcut("execution(* com.cydeo.controller.CourseController.*(..))")
+//    public void myPointCut(){}
+//
+//
+//    @Before("myPointCut()")
+//    public void log(){
+//        logger.info("Info log .............");
+//    }
+//---------------------------------------------------------------------------------------------------------------------------
+//
+//    @Pointcut("execution(* com.cydeo.repository.CourseRepository.findById(*))")
+//    public void courseRepositoryFindByIdPC(){}
+//
+//    @Before("courseRepositoryFindByIdPC()")
+//    public void beforeCourseRepositoryFindById(JoinPoint joinPoint){
+//        logger.info("Before --> Method : {}, Arguments : {}, Target: {}",joinPoint.getSignature(),joinPoint.getArgs(),joinPoint.getTarget());
+//        // in method {} --> curly bracketler sirasiyla parametlerle yer degistirecek otomatikmen. Guzel ozellik.
+//
+//        //joinPoint.getSignature() --> hangi method calisiyor onu gosterir
+//        // joinPoint.getArgs()  -- > hangi argumanlar gecildi onu gosterir
+//
+//
+//    }
+//---------------------------------------------------------------------------------------------------------------------------
+
+//    @Pointcut("within(com.cydeo.controller..*)")
+//    public void anyControllerOperation(){}
+//
+//    @Pointcut("@within(org.springframework.stereotype.Service)")
+//    public void anyServiceOperation(){}
+//
+//    @Before("anyControllerOperation() || anyServiceOperation()")
+//    public void beforeAnyControllerOrServiceAdvice(JoinPoint joinPoint){
+//        logger.info("Before --> Method : {}, Arguments : {}, Target: {}",joinPoint.getSignature(),joinPoint.getArgs(),joinPoint.getTarget());
+//
+//    }
+
+//---------------------------------------------------------------------------------------------------------------------------
 
 
-    @Before("myPointCut()")
-    public void log(){
-        logger.info("Info log .............");
-    }
+    // we will chech delete mapping.
+    @Pointcut("@annotation(org.springframework.web.bind.annotation.DeleteMapping)")
+    public void anyDeleteControllerOperation(){}
 
-
-    @Pointcut("execution(* com.cydeo.repository.CourseRepository.findById(*))")
-    public void courseRepositoryFindByIdPC(){}
-
-    @Before("courseRepositoryFindByIdPC()")
-    public void beforeCourseRepositoryFindById(JoinPoint joinPoint){
+    @Before("anyDeleteControllerOperation()")
+    public void beforeDeleteMappingAnnotation(JoinPoint joinPoint){
         logger.info("Before --> Method : {}, Arguments : {}, Target: {}",joinPoint.getSignature(),joinPoint.getArgs(),joinPoint.getTarget());
-        // in method {} --> curly bracketler sirasiyla parametlerle yer degistirecek otomatikmen. Guzel ozellik.
-
-        //joinPoint.getSignature() --> hangi method calisiyor onu gosterir
-        // joinPoint.getArgs()  -- > hangi argumanlar gecildi onu gosterir
-
 
     }
-
-
 
 
 
