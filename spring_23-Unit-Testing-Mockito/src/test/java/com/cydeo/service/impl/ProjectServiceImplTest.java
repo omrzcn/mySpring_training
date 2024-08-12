@@ -11,6 +11,8 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.util.NoSuchElementException;
+
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
@@ -51,5 +53,23 @@ class ProjectServiceImplTest {
         assertNotNull(projectDTO); // we want to see in here it is not null end of the test
 
     }
+
+
+    @Test
+    void getByProjectCode_ExceptionTest(){
+        when(projectRepository.findByProjectCode("")).thenThrow(new NoSuchElementException("Project Not Found"));
+        Throwable throwable = assertThrows(NoSuchElementException.class,()->projectService.getByProjectCode(""));
+
+        verify(projectRepository).findByProjectCode("");
+
+        // make sure that convertToDto method runs or not.
+        verify(projectMapper,never()).convertToDto(any(Project.class));
+
+        assertEquals("Project Not Found",throwable.getMessage());
+
+
+    }
+
+
 
 }
